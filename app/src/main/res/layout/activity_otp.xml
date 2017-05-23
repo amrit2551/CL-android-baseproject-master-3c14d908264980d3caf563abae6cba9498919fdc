@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.skeleton.activity.OtpActivity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/splash_bg"/>
+
+
+    <include
+        android:id="@+id/top_toolbar"
+        layout="@layout/app_bar_top"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_toolbar"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_medium">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_large"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/unlocked"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/tvResendOTP"
+                    style="@style/tv_otp"
+                    android:drawableStart="@drawable/resend_o_t_p"
+                    android:text="@string/resend_otp"/>
+
+
+                <TextView
+                    style="@style/tv_otp"
+                    android:id="@+id/tvEditNum"
+                    android:drawableStart="@drawable/e_dit_number"
+                    android:text="@string/edit_number"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/otp_text"
+            android:textSize="@dimen/font_large"/>
+
+
+        <TextView
+            android:id="@+id/tvPhoneNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/spacing_normal"
+            android:gravity="center_horizontal"
+            android:textColor="#4a4a4a"
+            android:textSize="@dimen/font_xlarge"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="40dp"
+            android:padding="@dimen/spacing_medium">
+
+
+            <com.skeleton.util.customview.MaterialEditText
+                android:id="@+id/etDigitOne"
+                style="@style/tv_otp"/>
+
+            <com.skeleton.util.customview.MaterialEditText
+                android:id="@+id/etDigitTwo"
+                style="@style/tv_otp"/>
+
+            <com.skeleton.util.customview.MaterialEditText
+                android:id="@+id/etDigitThree"
+                style="@style/tv_otp"/>
+
+            <com.skeleton.util.customview.MaterialEditText
+                android:id="@+id/etDigitFour"
+                style="@style/tv_otp"/>
+
+
+        </LinearLayout>
+
+
+        <Button
+            style="@style/primary_button"
+            android:id="@+id/btnVerify"
+            android:background="@drawable/button_shape"
+            android:text="@string/verify"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

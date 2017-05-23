@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearDrawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/spacing_xlarge"
+        android:layout_marginStart="@dimen/spacing_xlarge"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/iv_profile_image"
+            android:layout_width="69dp"
+            android:layout_height="68dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/spacing_normal"
+            android:src="@drawable/com_facebook_profile_picture_blank_square"
+            app:civ_border_color="@color/black"
+            app:civ_border_width="1dp"
+            />
+
+        <TextView
+            android:id="@+id/tvdrawerUserAccount"
+            style="@style/Drawer_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/spacing_large"
+            android:text="@string/your_account"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/font_small"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_xlarge"
+        android:layout_marginStart="@dimen/spacing_xlarge"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tv_date_posts"
+            style="@style/Drawer_content"
+            android:drawableStart="@drawable/date_posts"
+            android:text="@string/date_post"
+            />
+
+        <TextView
+            android:id="@+id/tv_confirmed_dates"
+            style="@style/Drawer_content"
+            android:drawableStart="@drawable/my_dates"
+            android:text="@string/my_dates"/>
+
+        <TextView
+            android:id="@+id/tv_favourites"
+            style="@style/Drawer_content"
+            android:drawableStart="@drawable/favouritesss"
+            android:text="@string/my_favourite"
+            />
+
+        <TextView
+            android:id="@+id/tv_membership"
+            style="@style/Drawer_content"
+            android:drawableStart="@drawable/mmemberships"
+            android:text="@string/tv_memberships"
+            />
+
+        <TextView
+            android:id="@+id/tv_account_setting"
+            style="@style/Drawer_content"
+            android:drawableStart="@drawable/settings"
+            android:text="@string/account_setting"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_logout"
+        style="@style/Drawer_content"
+        android:layout_gravity="center"
+        android:text="@string/logout"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/font_small"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/side_menu_exut"
+        />
+
+</LinearLayout>

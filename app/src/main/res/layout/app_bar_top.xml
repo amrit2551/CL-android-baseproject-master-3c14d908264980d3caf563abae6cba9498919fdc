@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/icon_back"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_normal"/>
+
+    <Button
+        android:id="@+id/btnSkip"
+        style="@style/primary_button"
+        android:layout_width="@dimen/app_bar_width"
+        android:layout_height="@dimen/app_bar_h"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/spacing_normal"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/button_shape"
+        android:text="@string/skip"
+        android:textSize="@dimen/font_small"/>
+
+</RelativeLayout>

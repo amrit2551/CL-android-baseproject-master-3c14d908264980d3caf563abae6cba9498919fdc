@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:background="@drawable/background_parts">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/one_step"/>
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_small">
+
+        <View
+            android:id="@+id/vFirst"
+            style="@style/view_style"/>
+
+        <View
+            android:id="@+id/vSecond"
+            style="@style/view_style"/>
+
+        <View
+            android:id="@+id/vThird"
+            style="@style/view_style"/>
+
+        <View
+            android:id="@+id/vFourth"
+            style="@style/view_style"/>
+
+        <View
+            android:id="@+id/vFifth"
+            style="@style/view_style"/>
+
+        <View
+            android:id="@+id/vSixth"
+            style="@style/view_style"/>
+
+        <View
+            android:id="@+id/vSeventh"
+            style="@style/view_style"/>
+        <View
+            android:id="@+id/eight"
+            style="@style/view_style"/>
+
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_medium">
+
+            <com.skeleton.util.customview.MaterialEditText
+                android:id="@+id/etRelationship"
+                style="@style/et_design_prof_one"
+                android:hint="@string/relationship_history"/>
+
+            <com.skeleton.util.customview.MaterialEditText
+                android:id="@+id/etEthnicity"
+                style="@style/et_design_prof_one"
+                android:hint="@string/ethnicity"/>
+
+            <com.skeleton.util.customview.MaterialEditText
+                android:id="@+id/etReligion"
+                style="@style/et_design_prof_one"
+                android:hint="@string/religion"/>
+
+            <com.skeleton.util.customview.MaterialEditText
+                android:id="@+id/etHeight"
+                style="@style/et_design_prof_one"
+                android:hint="@string/height"/>
+
+            <com.skeleton.util.customview.MaterialEditText
+                android:id="@+id/etBodyType"
+                style="@style/et_design_prof_one"
+                android:hint="@string/body_type"/>
+
+            <com.skeleton.util.customview.MaterialEditText
+                android:id="@+id/etSmoking"
+                style="@style/et_design_prof_one"
+                android:hint="@string/smoking"/>
+
+
+            <com.skeleton.util.customview.MaterialEditText
+                android:id="@+id/etDrinking"
+                style="@style/et_design_prof_one"
+                android:hint="@string/drinking"/>
+
+            <com.skeleton.util.customview.MaterialEditText
+                android:id="@+id/etOrientation"
+                style="@style/et_design_prof_one"
+                android:hint="@string/orientation"/>
+
+
+            <Button
+                android:id="@+id/btnVerify"
+
+                style="@style/primary_button"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:background="@drawable/button_shape"
+                android:text="@string/next"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
