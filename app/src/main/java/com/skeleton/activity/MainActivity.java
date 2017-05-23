@@ -7,7 +7,6 @@ import android.widget.Toast;
 
 import com.skeleton.R;
 import com.skeleton.adapter.UserInfoAdapter;
-import com.skeleton.modal.UserInfo;
 import com.skeleton.retrofit.APIError;
 import com.skeleton.retrofit.ResponseResolver;
 import com.skeleton.retrofit.RestClient;

@@ -7,9 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-
 import com.skeleton.R;
-import com.skeleton.modal.RegisterResponse;
+import com.skeleton.modal.signupResponse.TheResponse;
 import com.skeleton.retrofit.APIError;
 import com.skeleton.retrofit.CommonParams;
 import com.skeleton.retrofit.ResponseResolver;
@@ -77,11 +76,11 @@ public class SignInFragment extends BaseFragment {
                 .add("flushPreviousSessions", true)
                 .add("appVersion", 1)
                 .build();
-        RestClient.getApiInterface().login(null, params.getMap()).enqueue(new ResponseResolver<RegisterResponse>(getContext(), true, true) {
+        RestClient.getApiInterface().login(null, params.getMap()).enqueue(new ResponseResolver<TheResponse>(getContext(), true, true) {
 
             @Override
-            public void success(final RegisterResponse registerResponse) {
-                Log.i("app" , "success");
+            public void success(final TheResponse theResponse) {
+                Log.i("app", "success");
             }
 
             @Override
@@ -92,11 +91,9 @@ public class SignInFragment extends BaseFragment {
     }
 
 
-
-
-                /**
-                 * @return boolean value
-                 */
+    /**
+     * @return boolean value
+     */
 
     private boolean validateinfo() {
         if (!(ValidateEditText.checkEmail(editTextEmail))) {

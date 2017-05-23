@@ -26,6 +26,9 @@
 
     <!-- typical sizes of views -->
     <dimen name="button_height_tall">60dp</dimen>
+    <dimen name="app_bar_width">80dp</dimen>
+    <dimen name="app_bar_h">20dp</dimen>
+    <dimen name="app_bar_height">280dp</dimen>
     <dimen name="button_height_normal">40dp</dimen>
     <dimen name="button_height_short">35dp</dimen>
     <dimen name="button_height_small">24dp</dimen>
@@ -38,10 +41,38 @@
     <dimen name="line_broad">1dp</dimen>
     <dimen name="radii">50dp</dimen>
     <dimen name="dpdimen">125dp</dimen>
+    <dimen name="margin_small">5dp</dimen>
+    <dimen name="margin_normal">10dp</dimen>
+    <dimen name="margin_medium">15dp</dimen>
+    <dimen name="margin_large">20dp</dimen>
+    <dimen name="margin_xlarge">25dp</dimen>
+    <dimen name="margin_x_large">33dp</dimen>
+    <dimen name="margin_xxlarge">60dp</dimen>
+
+    <dimen name="padding_small">5dp</dimen>
+    <dimen name="padding_normal">10dp</dimen>
+    <dimen name="padding_medium">15dp</dimen>
+    <dimen name="padding_large">20dp</dimen>
+    <dimen name="padding_xlarge">25dp</dimen>
+    <dimen name="padding_xxlarge">40dp</dimen>
+
+    <dimen name="image_width">80dp</dimen>
+    <dimen name="image_height">80dp</dimen>
+    <dimen name="round_edit_text">100dp</dimen>
+    <dimen name="sign_up_height">340dp</dimen>
+    <dimen name="tv_row">40dp</dimen>
+
+    <dimen name="text_view_height">4dp</dimen>
+    <dimen name="releative_layout_width">210dp</dimen>
+    <dimen name="relative_layout_height">40dp</dimen>
     <dimen name="floating_label_text_size">12sp</dimen>
     <dimen name="bottom_text_size">12sp</dimen>
     <dimen name="inner_components_spacing">8dp</dimen>
     <dimen name="bottom_ellipsis_height">4dp</dimen>
     <dimen name="post_image_height">250dp</dimen>
     <dimen name="empty_nav_view_height">25dp</dimen>
+    <dimen name="margin_bottom">162dp</dimen>
+    <dimen name="margin_start">71dp</dimen>
+    <dimen name="img_margin_start">150dp</dimen>
+    <dimen name="img_margin_top">125dp</dimen>
 </resources>

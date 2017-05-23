@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -17,7 +18,7 @@ import android.widget.RadioGroup;
 import com.bumptech.glide.Glide;
 import com.kbeanie.multipicker.api.entity.ChosenImage;
 import com.skeleton.R;
-import com.skeleton.modal.RegisterResponse;
+import com.skeleton.modal.signupResponse.TheResponse;
 import com.skeleton.retrofit.APIError;
 import com.skeleton.retrofit.MultipartParams;
 import com.skeleton.retrofit.ResponseResolver;
@@ -28,7 +29,13 @@ import com.skeleton.util.customview.MaterialEditText;
 import com.skeleton.util.imagepicker.ImageChooser;
 
 import java.io.File;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+
+import io.paperdb.Paper;
 
 
 /**
@@ -43,6 +50,7 @@ public class SignUpFragment extends BaseFragment {
     private ImageView ivdisplaypicture;
     private RadioGroup radioGroup;
     private RadioButton radioButtonFemale, radioButtonMale;
+    private Date date = new Date();
     private CheckBox checkBox;
     private int gender;
     private File imagefile;
@@ -52,6 +60,7 @@ public class SignUpFragment extends BaseFragment {
     public View onCreateView(final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable final Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_sign_up, container, false);
         init(view);
+        Paper.init(getContext());
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(final RadioGroup group, @IdRes final int checkedId) {
@@ -86,7 +95,7 @@ public class SignUpFragment extends BaseFragment {
 
         editTextName = (MaterialEditText) view.findViewById(R.id.etName);
         editTextPhone = (MaterialEditText) view.findViewById(R.id.etPhoneNum);
-        ivdisplaypicture = (ImageView) view.findViewById(R.id.iv_Dp);
+        //ivdisplaypicture = (ImageView) view.findViewById(R.id.iv_Dp);
         editTextEmail = (MaterialEditText) view.findViewById(R.id.etEmail);
         editTextDOB = (MaterialEditText) view.findViewById(R.id.etDOB);
         editTextPassword = (MaterialEditText) view.findViewById(R.id.etPassword);
@@ -97,7 +106,7 @@ public class SignUpFragment extends BaseFragment {
         checkBox = (CheckBox) view.findViewById(R.id.cb);
         btnSignUp = (Button) view.findViewById(R.id.btnSignUp);
         btnSignUp.setOnClickListener(this);
-        ivdisplaypicture.setOnClickListener(this);
+        //ivdisplaypicture.setOnClickListener(this);
         radioButtonFemale.setChecked(true);
         gender = 1;
     }
@@ -143,25 +152,43 @@ public class SignUpFragment extends BaseFragment {
     }
 
     /**
+     * @param editText et containing dob
+     * @return boolean true if valid, else returns false
+     */
+    private boolean checkDOB(final EditText editText) {
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String s = editText.getText().toString();
+        try {
+            date = df.parse(s);
+            return true;
+
+        } catch (ParseException e) {
+            editText.setError(getString(R.string.error_date));
+            return false;
+        }
+    }
+
+    /**
      * signup info
      */
     private void post() {
         MultipartParams params = new MultipartParams.Builder()
-                .add("firstName", editTextName.getText().toString())
-                .add("dob", editTextDOB.getText().toString())
+                .add("firstName", editTextName.getText().toString().trim())
+                .add("dob", editTextDOB.getText().toString().trim())
                 .add("countryCode", "+91")
-                .add("phoneNo", editTextPhone.getText().toString())
-                .add("email", editTextEmail.getText().toString())
-                .add("password", editTextPassword.getText().toString())
+                .add("phoneNo", editTextPhone.getText().toString().trim())
+                .add("email", editTextEmail.getText().toString().trim())
+                .add("password", editTextPassword.getText().toString().trim())
                 .add("gender", gender)
                 .add("deviceToken", "gshfcdujh")
                 .add("appVersion", "1")
                 .add("language", "EN")
                 .add("deviceType", "ANDROID")
                 .addFile("profilePic", imagefile).build();
-        RestClient.getApiInterface().register(params.getMap()).enqueue(new ResponseResolver<RegisterResponse>(getContext(), true) {
+        RestClient.getApiInterface().register(params.getMap()).enqueue(new ResponseResolver<TheResponse>(getContext(), true) {
             @Override
-            public void success(final RegisterResponse registerResponse) {
+            public void success(final TheResponse registerResponse) {
+                Paper.book().write("accesstoken", "bearer " + registerResponse.getData().getAccessToken());
                 Log.i("app", "success");
             }
 

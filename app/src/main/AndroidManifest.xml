@@ -32,7 +32,13 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".activity.SplashActivity"></activity>
+        <activity android:name=".activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".activity.TestClassLocation" />
         <activity
             android:name="com.facebook.FacebookActivity"
@@ -59,16 +65,11 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".activity.MainActivity">
-        </activity>
-        <activity android:name=".activity.PostActivity">
-        </activity>
-        <activity android:name=".activity.LoginSignUpActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN"/>
-            <category android:name="android.intent.category.LAUNCHER"/>
-        </intent-filter>
-</activity>
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.LoginSignUpActivity" />
+        <activity android:name=".activity.OtpActivity" />
+        <activity android:name=".activity.CompleteProfileActivity" />
+        <activity android:name=".activity.HomeActivity"></activity>
     </application>
 
 </manifest>

@@ -18,6 +18,8 @@ import com.skeleton.util.Log;
 import com.skeleton.util.Util;
 import com.skeleton.util.dialog.CustomAlertDialog;
 
+import io.paperdb.Paper;
+
 /**
  * Landing Page of the App
  */
@@ -30,6 +32,7 @@ public class SplashActivity extends BaseActivity implements FCMTokenInterface {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         init();
+        Paper.init(this);
     }
 
 
@@ -112,9 +115,38 @@ public class SplashActivity extends BaseActivity implements FCMTokenInterface {
     @Override
     public void onTokenReceived(final String token) {
         Log.e(TAG, token);
-        startActivity(new Intent(this, TestClassLocation.class));
+        // String accessToken = CommonData.getAccessToken();
+        //nextStep(accessToken);
+//        finish();
+        startActivityForResult(new Intent(this, LoginSignUpActivity.class), RC_SIGN_UP);
     }
 
+    /**
+     * method
+     * <p>
+     * //     *
+     */
+//    public void nextStep(final String stoken) {
+//        if (stoken != null) {
+//            RestClient.getApiInterface().getProfile("bearer " + stoken).enqueue(new ResponseResolver<TheResponse>(this, true, true) {
+//                @Override
+//                public void success(final TheResponse theResponse) {
+//
+//                    startActivity(new Intent(SplashActivity.this, CompleteProfileActivity.class));
+//                }
+//
+//                @Override
+//                public void failure(final APIError error) {
+//                    android.util.Log.d("debug", "falied response");
+//                }
+//            });
+//        } else {
+//            Log.d("debug", "access denied");
+//            startActivity(new Intent(this, LoginSignUpActivity.class));
+//
+//        }
+//
+//    }
     @Override
     public void onFailure() {
         if (isFinishing()) {

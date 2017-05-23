@@ -22,7 +22,7 @@ public final class ValidateEditText {
      * Empty Constructor
      * not called
      */
-    private ValidateEditText() {
+    public ValidateEditText() {
     }
 
     /**

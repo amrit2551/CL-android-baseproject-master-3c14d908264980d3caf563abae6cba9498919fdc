@@ -5,6 +5,7 @@
 
     <string name="log_fcm_message_id">"FCM Message Id: "</string>
     <string name="Sign_in">sign_in</string>
+    <string name="Add_Interest">Select any five interests here </string>
     <string name="log_fcm_notification_message">"FCM Notification Message: "</string>
     <string name="log_fcm_data">"FCM Data Message: "</string>
     <string name="log_fcm_data_message">"FCM Data Message:(TA)G "</string>
@@ -15,6 +16,14 @@
     <string name="loading">Loading…</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
+    <string name="your_account">YOUR ACCOUNT</string>
+    <string name="date_post">Date Posts</string>
+    <string name="my_dates">My Dates</string>
+    <string name="my_favourite">My Favourites</string>
+    <string name="tv_memberships">MemberShips</string>
+    <string name="account_setting">Account Settings</string>
+    <string name="logout">Logout</string>
+    <string name="error_date">Date not in Correct format</string>
     <string name="select_gender">Select \nGender :</string>
     <string name="tos">I accept Terms of Service  and Privacy Policy</string>
     <string name="name">Name</string>
@@ -28,6 +37,21 @@
     <string name="remember_me">Remember Me</string>
     <string name="forgot_password"><u>Forgot Password?</u></string>
     <string name="sign_up_with_fb">Sign Up With Facebook</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="edit_number">Edit Number</string>
+    <string name="otp_text">Please Enter OTP number you have \nreceived as an SMS on phone no :</string>
+    <string name="verify">Verify</string>
+    <string name="relationship_history">Relationship history</string>
+    <string name="ethnicity">Ethnicity</string>
+    <string name="religion">Religion</string>
+    <string name="body_type">Body Type</string>
+    <string name="smoking">Smoking</string>
+    <string name="drinking">Drinking</string>
+    <string name="orientation">Orientation</string>
+    <string name="skip"><![CDATA[Skip >>]]></string>
+    <string name="next">Next</string>
+    <string name="height">Height</string>
+    <string name="set">Set</string>
 
     <!-- Image Chooser -->
     <string name="text_cancel">Cancel</string>
@@ -62,6 +86,9 @@
     <string name="error_internet_not_connected">Not connected to internet. Please check your internet connection or try again later.</string>
     <string name="error_fb_login_failed">Facebook Login failed!!</string>
     <string name="error_not_a_valid_image_file">File is not a valid image.</string>
+    <string name="text">Please Enter OTP number you have recieved as an SMS on phone no : </string>
+    <string name="otp_verify">Verify</string>
+
 
     <string name="rationale_ask_again">This app may not work correctly without the requested permissions. Open the app settings screen to modify app permissions.</string>
     <string name="title_settings_dialog">Permissions Required</string>

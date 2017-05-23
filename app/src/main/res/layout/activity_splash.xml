@@ -5,16 +5,17 @@
     android:id="@+id/activity_splash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.skeleton.activity.SplashActivity">
+    tools:context="com.skeleton.activity.SplashActivity"
+    android:background="@drawable/splash_bg">
 
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:textSize="@dimen/font_xlarge"
-        android:text="Hello User\nWelcome to Base Project" />
-
+        android:src="@drawable/logo"
+        android:layout_marginBottom="@dimen/margin_bottom"
+        android:layout_marginEnd="@dimen/margin_start"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
